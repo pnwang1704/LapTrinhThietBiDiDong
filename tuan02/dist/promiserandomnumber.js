@@ -6,7 +6,7 @@ function getRandomNumberAsync() {
             resolve(num);
         }
         else {
-            reject(new Error("Failed to generate random number"));
+            reject(new Error("Lỗi khi random số!!"));
         }
     });
 }
