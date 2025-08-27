@@ -1,10 +1,15 @@
 "use strict";
-const helloAsync = new Promise((resolve) => {
-    setTimeout(() => {
-        resolve("Hello Async");
-    }, 2000);
-});
-// Example usage:
-helloAsync.then((message) => {
-    console.log(message); // Output after 2 seconds: Hello Async
-});
+// Hàm trả về Promise<string>
+function helloAsync() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Hello Async");
+        }, 2000);
+    });
+}
+// Sử dụng async/await
+async function run() {
+    const message = await helloAsync();
+    console.log(message);
+}
+run();
