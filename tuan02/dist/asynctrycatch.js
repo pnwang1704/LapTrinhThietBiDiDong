@@ -1,5 +1,4 @@
 "use strict";
-// Hàm giả lập 1 tác vụ async có thể thất bại
 function simulateTask3(ms, shouldFail = false) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -12,10 +11,9 @@ function simulateTask3(ms, shouldFail = false) {
         }, ms);
     });
 }
-// Hàm async với try/catch
 async function runTask1() {
     try {
-        const result = await simulateTask3(2000, true); // true => sẽ reject
+        const result = await simulateTask3(2000, true);
         console.log(result);
     }
     catch (error) {
@@ -25,5 +23,4 @@ async function runTask1() {
         console.log("Done");
     }
 }
-// Gọi hàm
 runTask1();
