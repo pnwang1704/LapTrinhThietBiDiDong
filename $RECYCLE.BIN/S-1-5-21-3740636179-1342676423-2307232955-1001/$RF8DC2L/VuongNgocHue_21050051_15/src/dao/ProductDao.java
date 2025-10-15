@@ -1,0 +1,89 @@
+package dao;
+
+import java.util.Map;
+
+import javax.net.ssl.ExtendedSSLSession;
+
+import model.Product;
+import model.Supplier;
+import util.AppUtils;
+
+public class ProductDao {
+	public boolean addSupplier(Supplier supplier) {
+		String query = 
+				""
+				CREATE (s.Supplier)
+				SET s.SupplierID = $SupplierID, s.CompanyName = $CompanyName, s.ContactName = $ContactName, s.Country = $Country
+				RETURN s
+				"";
+		Map<String, Object> params = Map.of(){
+			"SupplierID", supplier.getSupplierID();
+			"CompanyName", supplier.getCompanyName();
+			"ContactName", supplier.getContactName();
+			"Country", supplier.getCountry();
+		}
+		try(Session session = AppUtils.getSession()) {
+			return session.executeWrite(tx->){
+				ResuletSummary resultSummary = tx.run(query, params).consime();
+				return resultSummary.counters().nodeCreated()>0;)
+			}
+			
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
+	public boolean updateProduct(String ProductID, String SupplierID, String OrderID) {
+		String query =
+				""
+				MATCH(s.Supplier) <- [r:SUPPLIES] - (Order)
+				WHERE r.endDate IS NULL AND p.ProdcutID = $ProdcutID AND o.Order = $OrderID
+				SET o.Order = $order;
+				"",
+				
+				Map<String, object> params = Map.of(
+						"SupplierID", SupplierID,
+						"Product", Product,
+						"Order", Order
+						);
+				try(Session session = AppUtils.getSession()) {
+					return session.executeWrite(tx->){
+						ReSultSummary.executeWrite = tx.run()
+					}
+				} catch (Exception e) {
+					
+				}
+		return false;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

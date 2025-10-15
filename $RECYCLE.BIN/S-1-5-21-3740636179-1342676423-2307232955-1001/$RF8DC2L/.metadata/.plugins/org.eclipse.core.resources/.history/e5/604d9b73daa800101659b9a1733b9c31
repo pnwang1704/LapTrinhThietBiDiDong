@@ -1,0 +1,28 @@
+package model;
+
+import java.io.Serializable;
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@SuperBuilder
+@Builder
+public class OrderDetail implements Serializable {
+private Order order;
+private Product product;
+private int quantity;
+private double unitPrice;
+private double discount;
+public OrderDetail(Order order, Product product, int quantity, double unitPrice, double discount) {
+	super();
+	this.order = order;
+	this.product = product;
+	this.quantity = quantity;
+	this.unitPrice = unitPrice;
+	this.discount = discount;
+}
+public OrderDetail() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+}

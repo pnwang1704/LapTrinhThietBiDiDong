@@ -1,0 +1,16 @@
+package dao;
+
+import model.Product;
+import model.Supplier;
+
+public class ProductDao {
+	public boolean addSupplier(Supplier supplier) {
+		String query = 
+				""
+				CREATE (p.Product)
+				SET p.
+				"";
+		return false;
+		
+	}
+}
