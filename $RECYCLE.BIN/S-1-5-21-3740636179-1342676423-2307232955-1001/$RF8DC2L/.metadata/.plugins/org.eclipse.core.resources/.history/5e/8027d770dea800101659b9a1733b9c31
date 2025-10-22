@@ -1,0 +1,11 @@
+package util;
+
+public class AppUtils {
+	public static void main(String[] args) {
+		private static final String DB_Name = "neo4j";
+		private static final String USERNAME = "neo4j";
+		private static final String PASSWORD = "VuongNgocHue";
+		
+
+	}
+}

@@ -1,0 +1,8 @@
+package model;
+
+public class Supplier {
+	private String supplier;
+	private String companyName;
+	private String contactName;
+	private String country;
+}

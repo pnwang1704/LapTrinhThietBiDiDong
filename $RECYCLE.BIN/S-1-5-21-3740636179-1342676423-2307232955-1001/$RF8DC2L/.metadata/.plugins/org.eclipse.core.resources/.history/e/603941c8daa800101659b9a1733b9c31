@@ -1,0 +1,12 @@
+package model;
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@SuperBuilder
+@Builder
+public class Supplier {
+	private String supplier;
+	private String companyName;
+	private String contactName;
+	private String country;
+}

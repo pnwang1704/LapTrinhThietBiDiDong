@@ -1,0 +1,25 @@
+package dao;
+
+import java.util.Map;
+
+import model.Product;
+import model.Supplier;
+
+public class ProductDao {
+	public boolean addSupplier(Supplier supplier) {
+		String query = 
+				""
+				CREATE (s.Supplier)
+				SET s.SupplierID = $SupplierID, s.CompanyName = $CompanyName, s.ContactName = $ContactName, s.Country = $Country
+				RETURN s
+				"";
+		Map<String, Object> params = Map.of(){
+			"SupplierID", supplier.getSupplierID();
+			"CompanyName", supplier.getCompanyName();
+			"ContactName", supplier.getContactName();
+			"Country", supplier.getCountry();
+		}
+		return false;
+		
+	}
+}

@@ -1,0 +1,18 @@
+package model;
+
+import java.io.Serializable;
+
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@SuperBuilder
+@Builder
+public class Product implements Serializable {
+	private String productID;
+	private String productName;
+	private String unit;
+	private String unitPrice;
+	private int unitslnStock;
+	private Supplier supplier;
+	
+}
